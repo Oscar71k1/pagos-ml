@@ -65,12 +65,11 @@ app.post("/create_preference", async (req, res) => {
         unit_price: parseFloat(item.unit_price.toFixed(2)), // Asegura dos decimales
         // Puedes añadir otros campos opcionales como description, picture_url, category_id, etc.
       })),
-    // Temporalmente, solo para probar:
-back_urls: {
-  success: "http://localhost:3000/success",
-  failure: "http://localhost:3000/failure",
-  pending: "http://localhost:3000/pending",
-},
+      back_urls: {
+        success: `${BASE_URL}/success`,
+        failure: `${BASE_URL}/failure`,
+        pending: `${BASE_URL}/pending`,
+      },
       // Redirige automáticamente al usuario si el pago es aprobado
       // Es muy recomendable añadir una notification_url (webhook) para produccion
       // notification_url: `${BASE_URL}/api/webhook/mercadopago`,
